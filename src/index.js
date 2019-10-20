@@ -60,12 +60,17 @@ class Form extends React.Component {
                 this.setState({ result: responsetext })
                 console.log(responsetext)
                 confirmAlert({
-                    title: responsetext,
-                    buttons: [
-                        {
-                            label: 'Yes',
-                        },
-                    ]
+                    customUI: ({ onClose }) => {
+                        return (
+                            <div className='alert alert-info' style={{
+                                padding: '50px 100px ', borderRadius: '30px'
+                            }}>
+                                <h1 style={{ textAlign: 'center' }}>{responsetext}</h1>
+                                <br/>
+                                <button className='btn btn-primary btn-lg' style={{ padding: '5px 20px', marginLeft : '25%' }} onClick={onClose}>OK</button>
+                            </div>
+                        );
+                    }
                 });
             })
             .catch(error => {
