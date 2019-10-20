@@ -74,16 +74,6 @@ class Form extends React.Component {
 				        </span>
 
                         <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Petal length</span>
-                            <input className="input100" type="text" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-                        <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Petal width</span>
-                            <input className="input100" type="text" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-                        <div className="wrap-input100 validate-input">
                             <span className="label-input100">Sepal length</span>
                             <input className="input100" type="text" name="sepal_length" placeholder="Enter the sepal length" onChange={this.handlechange}></input>
                             <span className="focus-input100"></span>
@@ -93,7 +83,17 @@ class Form extends React.Component {
                             <input className="input100" type="text" name="sepal_width" placeholder="Enter the sepal width" onChange={this.handlechange}></input>
                             <span className="focus-input100"></span>
                         </div>
-
+                        <div className="wrap-input100 validate-input">
+                            <span className="label-input100">Sepal length</span>
+                            <input className="input100" type="text" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
+                            <span className="focus-input100"></span>
+                        </div>
+                        <div className="wrap-input100 validate-input">
+                            <span className="label-input100">Petal width</span>
+                            <input className="input100" type="text" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
+                            <span className="focus-input100"></span>
+                        </div>
+                       
                         <div className="container-contact100-form-btn">
                             <div className="wrap-contact100-form-btn">
                                 <div className="contact100-form-bgbtn"></div>
