@@ -15,6 +15,21 @@ class Form extends React.Component {
         }
         this.handlechange = this.handlechange.bind(this)
         this.getresponse = this.getresponse.bind(this)
+        this.clear = this.clear.bind(this)
+    }
+
+    clear(e) {
+        e.preventDefault()
+        this.setState({
+            petal: "",
+            sepal: "",
+            pwidth: "",
+            swidth: "",
+        })
+        ReactDOM.findDOMNode(this.refs.i1).value = ""
+        ReactDOM.findDOMNode(this.refs.i2).value = ""
+        ReactDOM.findDOMNode(this.refs.i3).value = ""
+        ReactDOM.findDOMNode(this.refs.i4).value = ""
     }
 
     getresponse(e) {
@@ -66,48 +81,65 @@ class Form extends React.Component {
     }
     render() {
         return (
-            <div className="container-contact100">
-                <div className="wrap-contact100">
-                    <form className="contact100-form validate-form" autoComplete="off">
-                        <span className="contact100-form-title">
-                            Iris Flower Classification
+            <div>
+                <div className="cover" id="cover">
+                    <img id="logo" src="./logo.png" alt = "Iris"></img>
+                </div>
+                <div className="container-contact100">
+                    <div className="wrap-contact100">
+                        <form className="contact100-form validate-form" autoComplete="off">
+                            <span className="contact100-form-title">
+                                Iris Flower Classification
 				        </span>
 
-                        <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Sepal length</span>
-                            <input className="input100" type="text" name="sepal_length" placeholder="Enter the sepal length" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-                        <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Sepal width</span>
-                            <input className="input100" type="text" name="sepal_width" placeholder="Enter the sepal width" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-                        <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Petal length</span>
-                            <input className="input100" type="text" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-                        <div className="wrap-input100 validate-input">
-                            <span className="label-input100">Petal width</span>
-                            <input className="input100" type="text" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
-                            <span className="focus-input100"></span>
-                        </div>
-
-                        <div className="container-contact100-form-btn">
-                            <div className="wrap-contact100-form-btn">
-                                <div className="contact100-form-bgbtn"></div>
-                                <button className="contact100-form-btn" onClick={this.getresponse}>
-                                    <span>
-                                        Submit
-								<i className="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                                    </span>
-                                </button>
+                            <div className="wrap-input100 validate-input">
+                                <span className="label-input100">Sepal length</span>
+                                <input className="input100" type="text" ref = 'i1' name="sepal_length" placeholder="Enter the sepal length" onChange={this.handlechange}></input>
+                                <span className="focus-input100"></span>
                             </div>
-                        </div>
-                    </form>
+                            <div className="wrap-input100 validate-input">
+                                <span className="label-input100">Sepal width</span>
+                                <input className="input100" type="text" ref = "i2" name="sepal_width" placeholder="Enter the sepal width" onChange={this.handlechange}></input>
+                                <span className="focus-input100"></span>
+                            </div>
+                            <div className="wrap-input100 validate-input">
+                                <span className="label-input100">Petal length</span>
+                                <input className="input100" type="text" ref = "i3" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
+                                <span className="focus-input100"></span>
+                            </div>
+                            <div className="wrap-input100 validate-input">
+                                <span className="label-input100">Petal width</span>
+                                <input className="input100" type="text" ref = "i4" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
+                                <span className="focus-input100"></span>
+                            </div>
+
+                            <div className="container-contact100-form-btn">
+                                <div className="wrap-contact100-form-btn">
+                                    <div className="contact100-form-bgbtn"></div>
+                                    <button className="contact100-form-btn" onClick={this.getresponse}>
+                                        <span>
+                                            Submit
+								<i className="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="container-contact100-form-btn">
+                                <div className="wrap-contact100-form-btn">
+                                    <div className="contact100-form-bgbtn"></div>
+                                    <button className="contact100-form-btn" onClick={this.clear}>
+                                        <span>
+                                            Clear
+								<i className="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         )
     }
 }

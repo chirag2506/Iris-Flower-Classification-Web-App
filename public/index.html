@@ -37,15 +37,10 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div class="cover" id="cover">
-    <img id="logo" src="./logo.png">
-  </div>
-
   <div id="root"></div>
-
   <script>
     $(document).ready(() => {
-      $("#logo").animate({ height: "700px", width: "700px" }, 500)
+      $("#logo").animate({ height: "95%", width: "50%" }, 500)
       setTimeout(() => { $('#cover').hide("fast") }, 2000)
     })
   </script>

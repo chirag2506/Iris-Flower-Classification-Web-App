@@ -571,6 +571,7 @@ textarea.input100 {
   align-items: center;
   position: absolute;
   z-index: 10;
+  overflow: hidden;
   background-color: black;
 }
 
@@ -579,13 +580,11 @@ textarea.input100 {
   height : 0%;
   position: absolute;
   z-index: 1;
-  /* transition-duration: 1s; */
 }
 
 #root {
-  margin-right: 450px;
   position: relative;
-  color: white
+  color: white;
 }
 
 
