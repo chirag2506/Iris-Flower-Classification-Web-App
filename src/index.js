@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Form extends React.Component {
 
@@ -57,7 +59,14 @@ class Form extends React.Component {
             .then((responsetext) => {
                 this.setState({ result: responsetext })
                 console.log(responsetext)
-                alert(this.state.result)
+                confirmAlert({
+                    title: responsetext,
+                    buttons: [
+                        {
+                            label: 'Yes',
+                        },
+                    ]
+                });
             })
             .catch(error => {
                 console.log(error)
@@ -83,7 +92,7 @@ class Form extends React.Component {
         return (
             <div>
                 <div className="cover" id="cover">
-                    <img id="logo" src="./logo.png" alt = "Iris"></img>
+                    <img id="logo" src="./logo.png" alt="Iris"></img>
                 </div>
                 <div className="container-contact100">
                     <div className="wrap-contact100">
@@ -94,22 +103,22 @@ class Form extends React.Component {
 
                             <div className="wrap-input100 validate-input">
                                 <span className="label-input100">Sepal length</span>
-                                <input className="input100" type="text" ref = 'i1' name="sepal_length" placeholder="Enter the sepal length" onChange={this.handlechange}></input>
+                                <input className="input100" type="text" ref='i1' name="sepal_length" placeholder="Enter the sepal length" onChange={this.handlechange}></input>
                                 <span className="focus-input100"></span>
                             </div>
                             <div className="wrap-input100 validate-input">
                                 <span className="label-input100">Sepal width</span>
-                                <input className="input100" type="text" ref = "i2" name="sepal_width" placeholder="Enter the sepal width" onChange={this.handlechange}></input>
+                                <input className="input100" type="text" ref="i2" name="sepal_width" placeholder="Enter the sepal width" onChange={this.handlechange}></input>
                                 <span className="focus-input100"></span>
                             </div>
                             <div className="wrap-input100 validate-input">
                                 <span className="label-input100">Petal length</span>
-                                <input className="input100" type="text" ref = "i3" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
+                                <input className="input100" type="text" ref="i3" name="petal_length" placeholder="Enter the petal length" onChange={this.handlechange}></input>
                                 <span className="focus-input100"></span>
                             </div>
                             <div className="wrap-input100 validate-input">
                                 <span className="label-input100">Petal width</span>
-                                <input className="input100" type="text" ref = "i4" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
+                                <input className="input100" type="text" ref="i4" name="petal_width" placeholder="Enter the petal width" onChange={this.handlechange}></input>
                                 <span className="focus-input100"></span>
                             </div>
 
